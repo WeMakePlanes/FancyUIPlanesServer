@@ -19,7 +19,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "npm run server",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "build-ts": "tsc",
