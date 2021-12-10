@@ -15,12 +15,14 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String
-  password  String
-  bio       String?
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  first_name  String
+  last_name   String
+  middle_name String?
+  password    String
+  bio         String?
 }
 
 // Orders for when bookings are created
