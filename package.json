@@ -23,15 +23,16 @@
   },
   "name": "fancyuiplanessever",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "start": "npm run serve",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
-    "build-ts": "tsc",
+    "build-ts": "tsc -p .",
     "watch-ts": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --no-notify --respawn --transpile-only app/server.ts"
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only server.ts",
+    "dev-nodemon": "nodemon app/server.ts"
   },
   "repository": {
     "type": "git",
