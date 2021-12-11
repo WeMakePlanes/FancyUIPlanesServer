@@ -13,5 +13,5 @@ Stuff for planes using type-graphql, typescript, and primsa.
           ``` after changing your .env db url string to the hosted db.
 
 4. Run ```
-       npm start
-       ``` to initialize the application.
+       npm run dev
+       ``` to initialize the application for testing.
