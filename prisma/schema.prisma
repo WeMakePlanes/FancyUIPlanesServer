@@ -23,6 +23,7 @@ model User {
   middle_name String?
   password    String
   bio         String?
+  email       String   @unique
 }
 
 // Orders for when bookings are created
