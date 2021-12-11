@@ -5,13 +5,14 @@ import { buildSchema } from "type-graphql";
 import { PrismaClient } from "@prisma/client";
 import "reflect-metadata";
 import { resolvers } from "@generated/type-graphql";
+import { CreateNewUserResolver } from "./resolvers/createUser";
 
 const main = async () => {
     const PORT: string | number = process.env.PORT || 8080;
     const prisma: PrismaClient = new PrismaClient();
 
     const schema = await buildSchema({
-        resolvers: resolvers,
+        resolvers: [...resolvers, CreateNewUserResolver],
         emitSchemaFile: true,
         validate: false,
     });
