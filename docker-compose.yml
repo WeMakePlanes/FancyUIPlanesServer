@@ -8,5 +8,4 @@ services:
       target: base
     container_name: ts-node-docker
     ports:
-      - '8080:80'
-    command: npm run dev
+      - '8080:8080'
