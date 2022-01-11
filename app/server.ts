@@ -6,12 +6,15 @@ import { PrismaClient } from "@prisma/client";
 import "reflect-metadata";
 import { resolvers } from "@generated/type-graphql";
 import { CreateNewUserResolver } from "./resolvers/createUser";
+import dotenv from "dotenv";
+dotenv.config();
 
 const main = async () => {
     const PORT: string | number = process.env.PORT || 8080;
     const prisma: PrismaClient = new PrismaClient();
 
     const schema = await buildSchema({
+        // Add auto generated resolvers followed by custom resolvers
         resolvers: [...resolvers, CreateNewUserResolver],
         emitSchemaFile: true,
         validate: false,
@@ -20,9 +23,7 @@ const main = async () => {
     const server = new ApolloServer({
         schema,
         plugins: [ApolloPlayGround],
-        context: {
-            prisma
-        }
+        context: ({ req, res }: any) => ({ req, res, prisma })
     });
 
     await server.start();
