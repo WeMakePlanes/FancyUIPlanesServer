@@ -46,7 +46,7 @@ export class CreateNewUserResolver {
                 bio,
                 email
             }
-        })
+        });
     }
 }
 

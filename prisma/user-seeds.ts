@@ -21,4 +21,4 @@ export const users = [
         "password": "testing",
         "bio": "This is a bio2"
     }
-]
+];

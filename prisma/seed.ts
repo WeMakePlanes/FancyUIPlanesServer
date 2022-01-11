@@ -17,8 +17,8 @@ const seed = async (): Promise<void> => {
                 email: user.email,
                 bio: user.bio
             }
-        })
+        });
     }
-}
+};
 
 seed();
